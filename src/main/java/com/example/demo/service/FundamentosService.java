@@ -6,6 +6,7 @@ package com.example.demo.service;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //PARA INYECCION DE DEPENDENCIAS
@@ -27,14 +28,31 @@ public class FundamentosService implements IFundamentosService {
     }
 
 
-
     @Override
     public String calcularFactorial(int numero) {
-        return "";
+        if(numero < 0){
+            return "No se puede calcular factorial";
+        }
+        long factorial = 1;
+        for(int i = 1 ;  i <= numero ; i++){
+            factorial *= i;
+        }
+        return "El factorial es = " + factorial;
     }
 
     @Override
     public List<Integer> calcularFabonacci(int numero) {
-        return List.of();
+        List<Integer> fibonacci = new ArrayList<>();
+        if (numero <= 0){
+            return fibonacci;
+        }
+        int a = 0 , b = 1 ;
+        for(int i = 0 ; i < numero ; i++ ){
+            fibonacci.add(a);
+            int siguenteValor  =  a  + b ;
+            a = b;
+            b = siguenteValor;
+        }
+        return fibonacci;
     }
 }
