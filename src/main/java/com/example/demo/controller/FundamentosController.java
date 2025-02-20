@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
 //Deja de ser una clase comun y puede recibir peticiones @RestController
 @RestController
 //Esto sirve para que del dominio localhost todo lo que venga se pueda dar una direccion api/v1/fundamentos
